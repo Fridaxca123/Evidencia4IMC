@@ -20,9 +20,24 @@ Implementare un chatbot que brinde al usuario sugerencias sobre musica en base a
 cancion('A Thousand Years', romantica, romantico, ingles, 10).'''
 
 ## Pruebas 
+Para probar mi programa abre el descarga el documento swish.pl y deberas ingresar la siguiente información conforme al orden de las preguntas. Asegurese de escribir de manera correcta si no marcara error y finalizara el programa.  Si no se encuentran resultados se envia mensaje indicandolo. 
 
+**Correctas**
+* romantico, calmado, ingles, 10 -> A Thousand Years (Autor: Christina Perri), Perfect (Autor: Ed Sheeran)
+* clasica, calmado, instrumental, 00 -> River Flows in You (Autor: Yiruma)
+* pop, energico, ingles, 20 -> Blinding Lights (Autor: The Weeknd),  Dance Monkey (Autor: Tones and I), Don’t Start Now (Autor: Dua Lipa)
+* reggaeton, alegre, ingles, 00 -> Hips dont lie(Autor: Shakira)
+* rock, nostalgico, ingles, 70 -> Hotel California (Autor: Eagles), Stairway to Heaven (Autor: Led Zeppelin)
+
+**Incorrectas**
+* salsa -> El genero no es valido, por favor intentelo de nuevo.
+* clasica, rebelde, ingles, 70 ->No se encontraron canciones que coincidan con tus preferencias.
+* pop, calmado, español -> El idioma no es valido por favor intentelo de nuevo .
+* rock, triste -> El estado de animo no es valido, por favor intentelo de nuevo
+* romantico, calmado, ingles, 2000 -> La decada no es valida, por favor intentelo de nuevo.
 ## Analisis 
 
+**Complejidad**
 
 ## Referencias 
 - GeeksforGeeks. (2018, October 12). Introduction of Programming Paradigms. GeeksforGeeks. https://www-geeksforgeeks-org.translate.goog/introduction-of-programming-paradigms/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc
