@@ -42,7 +42,7 @@ estadoValido(E) :-
     member(E, [alegre, calmado, energico, rebelde, nostalgico]).
 
 idiomaValido(I) :-
-    member(I, [espanol, ingles]).
+    member(I, [espanol, ingles, instrumental]).
 
 decadaValido(D) :-
     member(D, [70, 80, 90, 00, 10, 20]).
@@ -85,13 +85,19 @@ chatbot :-
     (decadaValido(Decada) ->
         true ;
         write('La decada no es valida, por favor intentelo de nuevo.'), nl, fail),
-
-
-    (sugerencia(Genero, Estado, Idioma, Decada, Cancion, Autor) ->
-        write('En base a tus preferencias te recomiendo: '), nl,
-        write('Canción: '), write(Cancion), nl,
-        write('Autor: '), write(Autor), nl
-    ;
-        write('Lo siento no hemos encontrado una cancion para ti :(.'), nl
+    % Permite sugerir mas de 1 cancion que coincida
+    findall((Cancion, Autor), sugerencia(Genero, Estado, Idioma, Decada, Cancion, Autor), Lista),
+    (
+        Lista \= [] ->
+            write('Canciones recomendadas:'), nl,
+            imprimir_lista(Lista)
+        ;
+            write('No se encontraron canciones que coincidan con tus preferencias.'), nl
     ).
+
+% Imprime la lista de canciones recomendadas
+imprimir_lista([]).
+imprimir_lista([(Cancion, Autor)|T]) :-
+    write('- '), write(Cancion), write(' (Autor: '), write(Autor), write(')'), nl,
+    imprimir_lista(T).
 
