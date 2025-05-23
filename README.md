@@ -16,25 +16,31 @@ Implementare un chatbot que brinde al usuario sugerencias sobre musica en base a
 
 ## Implementacion 
 - Primero estableci la base del conocimiento, que incluye los datos (que se usaran para encontrar un match) de las canciones. 
-``` ```prolog ````
-cancion('A Thousand Years', romantica, calmado, ingles, 10, 'Christina Perri'). ```` ``` ````
+``` 
+cancion('A Thousand Years', romantica, calmado, ingles, 10, 'Christina Perri').
+ ````
 
 - Establece una regla que trata de relacionar los gustos del usuario con una canción existente en la base de conocimiento
-  ``` ```prolog ````
+  ```
   recomendar(GustoGenero, GustoEstado, GustoIdioma, GustoDecada, Cancion, Autor) :-
-    cancion(Cancion, GustoGenero, GustoEstado, GustoIdioma, GustoDecada, Autor).```` ``` ````
+    cancion(Cancion, GustoGenero, GustoEstado, GustoIdioma, GustoDecada, Autor).
+   ````
 
 - Se veridica que el dato ingresado para cada una de las categorias sea valido
-  ```generoValido(G) :-
- member(G, [rock, pop, romantica, clasica, reggaeton]).```
+  ```
+  generoValido(G) :-
+ member(G, [rock, pop, romantica, clasica, reggaeton]).
+ ```
 
 - Manda llamar las funciones de validar cada uno de los datos y después llama la función de recomendar para ebncontrar canciones
-  ```sugerencia(G, E, I, D, Cancion, Autor) :-
+  ```
+sugerencia(G, E, I, D, Cancion, Autor) :-
     generoValido(G),
     estadoValido(E),
     idiomaValido(I),
     decadaValido(D),
-    recomendar(G, E, I, D, Cancion, Autor).```
+    recomendar(G, E, I, D, Cancion, Autor).
+    ```
 
 
 ## Pruebas 
