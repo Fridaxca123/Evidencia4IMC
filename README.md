@@ -55,7 +55,7 @@ En cuanto al chatbot:
         true ;
         write('El genero no es valido, por favor intentelo de nuevo.'), nl, fail),
   ```
--Funcion busca si hay mas de una coincidencia y las guarda en una variable lista. Se verifica que esta variable no este vacia, de ser asi manda mensaje de que no se encontraron coincidencias y de lo comprario manda a llamar la función de imprimir_lista. 
+- Funcion busca si hay mas de una coincidencia y las guarda en una variable lista. Se verifica que esta variable no este vacia, de ser asi manda mensaje de que no se encontraron coincidencias y de lo comprario manda a llamar la función de imprimir_lista. 
   ```
   findall((Cancion, Autor), sugerencia(Genero, Estado, Idioma, Decada, Cancion, Autor), Lista),
     (
