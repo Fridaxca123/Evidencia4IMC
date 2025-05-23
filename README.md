@@ -33,9 +33,10 @@ Implementare un chatbot que brinde al usuario sugerencias sobre musica en base a
   ```
   generoValido(G) :-
   member(G, [rock, pop, romantica, clasica, reggaeton]).
- ```
+  ```
 
 - Manda llamar las funciones de validar cada uno de los datos y después llama la función de recomendar para ebncontrar canciones
+
   ```
   sugerencia(G, E, I, D, Cancion, Autor) :-
   generoValido(G),
