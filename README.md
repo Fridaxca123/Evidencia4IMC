@@ -10,14 +10,13 @@ La programación lógica se basa en declarar una base de conocimientos, hechos y
 En la programación logica se describe el problema y el sistema busca automaticamente las soluciones posibles, usando técnicas como unificacion y resolución logica. Prolog es un lenguaje declarativo, lo que implica que en lugar de calcular cómo encontrar una solución, un programa se compone de datos basados ​​en hechos y reglas. Ademas emplea backtracking y unificación para encontrar soluciones a problemas a partir de la base de conocimiento.
 
 ## Descripción 
-Implementare un chatbot que brinde al usuario sugerencias sobre musica en base a sus gustos y prefencias. Implementare esta solución usando el paradigma de programación logico y prolog, ademas hare uso de backtracking (para encontrar la canción adecuada).  
+Implementare un chatbot que brinde al usuario sugerencias sobre musica en base a sus gustos y prefencias. Implementare esta solución usando el paradigma de programación logico y prolog, ademas hare uso de backtracking.  
 
 ## Modelo
 
 ## Implementacion 
-- Primero estableci la base del conocimiento (aquella información que ya conocemos)
-''' % canción(Titulo, Genero, EstadoDeAnimo, Idioma, Decada).
-cancion('A Thousand Years', romantica, romantico, ingles, 10).'''
+- Primero estableci la base del conocimiento, que incluye los datos (que se usaran para encontrar un match) de las canciones. 
+```cancion('A Thousand Years', romantica, calmado, ingles, 10, 'Christina Perri').```
 
 ## Pruebas 
 Para probar mi programa abre el descarga el documento swish.pl y deberas ingresar la siguiente información conforme al orden de las preguntas. Asegurese de escribir de manera correcta si no marcara error y finalizara el programa.  Si no se encuentran resultados se envia mensaje indicandolo. 
@@ -38,6 +37,13 @@ Para probar mi programa abre el descarga el documento swish.pl y deberas ingresa
 ## Analisis 
 
 **Complejidad**
+La complejidad de tiempo para mi programa es de O(N) ya que se itera sobre todas las opciones (los datos de canciones disponibles) para encontrar coincidencias, esto significa que en el peor de los casos se deben recorer todas las opciones disponibles por lo que que la complejidad seria O(N) (N siendo el numero de canciones existentes). Como actualmente cuento con pocas canciones etso no representa un problema, pero si quisiera escalarlo a mayor cantidad esta complejidad seria una limitante, ya que con un mayor numero de datos la complejidad aumentaria haciendo el programa ineficiente. Por otro lado la complejidad de espacio seria O(M) (M es las canciones que tubieron coincidencia), el espacio consumido es principalmente[almente de la lista que guarda los resultados. 
+
+**Limitantes**
+La principal limitante que encuentro actualmenet a mi programa es que no cuento con una base de conocimiento extensa por lo que al ingresar conbinaciones de datos que si son validas no se genera una coincidencia. Aunque mi solución es efectiva concidero que a a mayor escala tendria dificultades debido a la complejidad de tiempo que supone. 
+
+**Soluciones con otros paradigmas**
+
 
 ## Referencias 
 - GeeksforGeeks. (2018, October 12). Introduction of Programming Paradigms. GeeksforGeeks. https://www-geeksforgeeks-org.translate.goog/introduction-of-programming-paradigms/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc
