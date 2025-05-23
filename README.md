@@ -17,6 +17,12 @@ Implementare un chatbot que brinde al usuario sugerencias sobre musica en base a
 ## Implementacion 
 - Primero estableci la base del conocimiento, que incluye los datos (que se usaran para encontrar un match) de las canciones. 
 ```cancion('A Thousand Years', romantica, calmado, ingles, 10, 'Christina Perri').```
+- Estableciéndoselas una regla que asegura que la 
+```recomendar(GustoGenero, GustoEstado, GustoIdioma, GustoDecada, Cancion, Autor) :-
+    cancion(Cancion, GustoGenero, GustoEstado, GustoIdioma, GustoDecada, Autor).```
+- Se veridica que el dato ingresado para cada una de las categorias sea valido
+```generoValido(G) :-
+    member(G, [rock, pop, romantica, clasica, reggaeton]).```
 
 ## Pruebas 
 Para probar mi programa abre el descarga el documento swish.pl y deberas ingresar la siguiente información conforme al orden de las preguntas. Asegurese de escribir de manera correcta si no marcara error y finalizara el programa.  Si no se encuentran resultados se envia mensaje indicandolo. 
@@ -37,9 +43,11 @@ Para probar mi programa abre el descarga el documento swish.pl y deberas ingresa
 ## Analisis 
 
 **Complejidad**
+
 La complejidad de tiempo para mi programa es de O(N) ya que se itera sobre todas las opciones (los datos de canciones disponibles) para encontrar coincidencias, esto significa que en el peor de los casos se deben recorer todas las opciones disponibles por lo que que la complejidad seria O(N) (N siendo el numero de canciones existentes). Como actualmente cuento con pocas canciones etso no representa un problema, pero si quisiera escalarlo a mayor cantidad esta complejidad seria una limitante, ya que con un mayor numero de datos la complejidad aumentaria haciendo el programa ineficiente. Por otro lado la complejidad de espacio seria O(M) (M es las canciones que tubieron coincidencia), el espacio consumido es principalmente[almente de la lista que guarda los resultados. 
 
 **Limitantes**
+
 La principal limitante que encuentro actualmenet a mi programa es que no cuento con una base de conocimiento extensa por lo que al ingresar conbinaciones de datos que si son validas no se genera una coincidencia. Aunque mi solución es efectiva concidero que a a mayor escala tendria dificultades debido a la complejidad de tiempo que supone. 
 
 **Soluciones con otros paradigmas**
