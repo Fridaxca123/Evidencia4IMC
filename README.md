@@ -16,9 +16,11 @@ Implementare un chatbot que brinde al usuario sugerencias sobre musica en base a
 
 ## Implementacion 
 - Primero estableci la base del conocimiento, que incluye los datos (que se usaran para encontrar un match) de las canciones. 
-```cancion('A Thousand Years', romantica, calmado, ingles, 10, 'Christina Perri').```
+```prolog
+cancion('A Thousand Years', romantica, calmado, ingles, 10, 'Christina Perri').
 
 - Establece una regla que trata de relacionar los gustos del usuario con una canción existente en la base de conocimiento
+  
   ```recomendar(GustoGenero, GustoEstado, GustoIdioma, GustoDecada, Cancion, Autor) :-
     cancion(Cancion, GustoGenero, GustoEstado, GustoIdioma, GustoDecada, Autor).```
 
