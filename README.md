@@ -35,7 +35,7 @@ Implementare un chatbot que brinde al usuario sugerencias sobre musica en base a
   member(G, [rock, pop, romantica, clasica, reggaeton]).
   ```
 
-- Manda llamar las funciones de validar cada uno de los datos y después llama la función de recomendar para ebncontrar canciones
+- Manda llamar las funciones de validar cada uno de los datos y después llama la función de recomendar para encontrar canciones
 
   ```
   sugerencia(G, E, I, D, Cancion, Autor) :-
@@ -45,11 +45,31 @@ Implementare un chatbot que brinde al usuario sugerencias sobre musica en base a
   decadaValido(D),
   recomendar(G, E, I, D, Cancion, Autor).
   ```
+En cuanto al chatbot: 
 
+- Imprime la pregunta, recibe la repuesta manda y llamar la función que verifica que el dato sea valido. Si el dato es valido continua el programa, si es invalida muestra mensaje de error y finaliza 
+  ```
+  write('Qué género prefieres? (rock, pop, romantica, clasica, reggaeton)'), nl,
+    read(Genero),
+    (generoValido(Genero) ->
+        true ;
+        write('El genero no es valido, por favor intentelo de nuevo.'), nl, fail),
+  ```
+-Funcion busca si hay mas de una coincidencia y las guarda en una variable lista. Se verifica que esta variable no este vacia, de ser asi manda mensaje de que no se encontraron coincidencias y de lo comprario manda a llamar la función de imprimir_lista. 
+  ```
+  findall((Cancion, Autor), sugerencia(Genero, Estado, Idioma, Decada, Cancion, Autor), Lista),
+    (
+        Lista \= [] ->
+            write('Canciones recomendadas:'), nl,
+            imprimir_lista(Lista)
+        ;
+            write('No se encontraron canciones que coincidan con tus preferencias.'), nl
+    ).
+  ```
 
 ## Pruebas 
 
-Para probar mi programa abre el descarga el documento swish.pl y deberas ingresar la siguiente información conforme al orden de las preguntas. Asegurese de escribir de manera correcta si no marcara error y finalizara el programa.  Si no se encuentran resultados se envia mensaje indicandolo. 
+Para probar mi programa abre el descarga el documento swish.pl, escribir en la consola **chatbot.** y deberas ingresar la siguiente información conforme al orden de las preguntas. Asegurese de escribir de manera correcta si no marcara error y finalizara el programa.  Si no se encuentran resultados se envia mensaje indicandolo. 
 
 **Correctas**
 * romantico, calmado, ingles, 10 -> A Thousand Years (Autor: Christina Perri), Perfect (Autor: Ed Sheeran)
