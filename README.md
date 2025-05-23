@@ -12,7 +12,9 @@ En la programación logica se describe el problema y el sistema busca automatica
 
 ## Descripción 
 
-Implementare un chatbot que brinde al usuario sugerencias sobre musica en base a sus gustos y prefencias. Implementare esta solución usando el paradigma de programación logico y prolog, ademas hare uso de backtracking.  Mi solución pertenece al paradigma logico debido a que se basa en hechos, reglas y consultas, declara un conocimiento (los datos de las canciones) y usa reglas logicas para inferir respuestas. Se esta implementando el backtracking ya que si una combinación cuenta con varias coincidencias el programa encuentra la primera y regresa para intentar encontrar una solución diferente, esto continua hasta que ya no encuentre coincidencias. 
+Implementare un chatbot que brinde al usuario sugerencias sobre musica en base a sus gustos y prefencias. Implementare esta solución usando el paradigma de programación logico y prolog, ademas hare uso de backtracking.  Mi solución pertenece al paradigma logico debido a que se basa en hechos, reglas y consultas, declara un conocimiento (los datos de las canciones) y usa reglas logicas para inferir respuestas. Se esta implementando el backtracking ya que si una combinación cuenta con varias coincidencias el programa encuentra la primera y regresa para intentar encontrar una solución diferente, esto continua hasta que ya no encuentre coincidencias. Finalmente se esta implementando también backtracking debido a que este lenguaje no usa while o for. 
+
+Prolog es popular en la inteligencia articfial, algunas de las ventajas de implementar prolog y el paradigma logico es facil de construir una base de datos, la combinación de patrones es facil, basa sus busquedas en recursion y tiene manejo de listas incorporado. Las desventajas incluyen que la entrada y salida de datos no es sencilla y existe el lenguaje LISP [2] que maneja de mejor manera lo anterior. 
 
 ## Modelo
 
@@ -66,7 +68,13 @@ En cuanto al chatbot:
             write('No se encontraron canciones que coincidan con tus preferencias.'), nl
     ).
   ```
-
+- Esta función imprime la lista de canciones recomendadas, usa recursion para a recorrer e imprimir cada elemento de la lista. 
+  ```
+  imprimir_lista([]).
+  imprimir_lista([(Cancion, Autor)|T]) :-
+    write('- '), write(Cancion), write(' (Autor: '), write(Autor), write(')'), nl,
+    imprimir_lista(T).
+  ```
 ## Pruebas 
 
 Para probar mi programa abre el descarga el documento swish.pl, escribir en la consola **chatbot.** y deberas ingresar la siguiente información conforme al orden de las preguntas. Asegurese de escribir de manera correcta si no marcara error y finalizara el programa.  Si no se encuentran resultados se envia mensaje indicandolo. 
@@ -95,7 +103,8 @@ La complejidad de tiempo para mi programa es de O(N) ya que se itera sobre todas
 La principal limitante que encuentro actualmenet a mi programa es que no cuento con una base de conocimiento extensa por lo que al ingresar conbinaciones de datos que si son validas no se genera una coincidencia. Aunque mi solución es efectiva concidero que a a mayor escala tendria dificultades debido a la complejidad de tiempo que supone. 
 
 **Soluciones con otros paradigmas**
-
+Si quisiera incluir una base de datos mas grande (mas canciones) implementar el paradigma de 
 
 ## Referencias 
 - GeeksforGeeks. (2018, October 12). Introduction of Programming Paradigms. GeeksforGeeks. https://www-geeksforgeeks-org.translate.goog/introduction-of-programming-paradigms/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc
+- [2] GeeksforGeeks. (2018a, May 26). Prolog | An Introduction - GeeksforGeeks. GeeksforGeeks. https://www.geeksforgeeks.org/prolog-an-introduction/
