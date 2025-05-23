@@ -103,7 +103,8 @@ La complejidad de tiempo para mi programa es de O(N) ya que se itera sobre todas
 La principal limitante que encuentro actualmenet a mi programa es que no cuento con una base de conocimiento extensa por lo que al ingresar conbinaciones de datos que si son validas no se genera una coincidencia. Aunque mi solución es efectiva concidero que a a mayor escala tendria dificultades debido a la complejidad de tiempo que supone. 
 
 **Soluciones con otros paradigmas**
-Si quisiera incluir una base de datos mas grande (mas canciones) implementar el paradigma de 
+
+Si quisiera incluir una base de datos mas grande (mas canciones) implementar el paradigma de programación concurrente ya que permitiria dividir la carga de trabajo en múltiples hilos o procesos que buscan en paralelo, reduciendo el tiempo de respuesta.  Además, en un sistema con múltiples usuarios solicitando recomendaciones al mismo tiempo, la concurrencia maneja estas peticiones en paralelo permitiendo acceso a todos los usuarios.
 
 ## Referencias 
 - GeeksforGeeks. (2018, October 12). Introduction of Programming Paradigms. GeeksforGeeks. https://www-geeksforgeeks-org.translate.goog/introduction-of-programming-paradigms/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc
