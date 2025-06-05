@@ -17,12 +17,12 @@ Implementare un chatbot que brinde al usuario sugerencias sobre musica en base a
 Prolog es popular en la inteligencia articfial, algunas de las ventajas de implementar prolog y el paradigma logico es facil de construir una base de datos, la combinación de patrones es facil, basa sus busquedas en recursion y tiene manejo de listas incorporado. Las desventajas incluyen que la entrada y salida de datos no es sencilla y existe el lenguaje LISP [2] que maneja de mejor manera lo anterior. 
 
 ## Modelo
-<img src="/modelo.png" alt="Paradigma de programación" width="200" height="300">
-![Paradigma de programación](/modelo.png)        
+<img src="/modelo.png" alt="Paradigma de programación" width="400" height="500">  
 
 Esta imagen muestra un diagrama de flujo que muestra el funcionamiento de mi programa en el lenguaje prolog. Mi solución implementa el paradigma de programación logico debido a que: 
 
 -Utiliza la unificación: solo existe una declaración de relaciones y en base a eso y usando la funcion trata de unificar recomendar con cancion. 
+
 -Valido que entradas si son logicas: member valida que la entrada si sea valida. 
 
 
