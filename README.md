@@ -10,20 +10,24 @@ La programación lógica se basa en declarar una base de conocimientos, hechos y
 
 En la programación logica se describe el problema y el sistema busca automaticamente las soluciones posibles, usando técnicas como unificacion y resolución logica. Prolog es un lenguaje declarativo, lo que implica que en lugar de calcular cómo encontrar una solución, un programa se compone de datos basados ​​en hechos y reglas. Ademas emplea backtracking y unificación para encontrar soluciones a problemas a partir de la base de conocimiento.
 
+Prolog es popular en la inteligencia articfial, algunas de las ventajas de implementar prolog y el paradigma logico es facil de construir una base de datos, la combinación de patrones es facil, basa sus busquedas en recursion y tiene manejo de listas incorporado. Las desventajas incluyen que la entrada y salida de datos no es sencilla y existe el lenguaje LISP [2] que maneja de mejor manera lo anterior. 
+
 ## Descripción 
 
-Implementare un chatbot que brinde al usuario sugerencias sobre musica en base a sus gustos y prefencias. Implementare esta solución usando el paradigma de programación logico y prolog, ademas hare uso de backtracking.  Mi solución pertenece al paradigma logico debido a que se basa en hechos, reglas y consultas, declara un conocimiento (los datos de las canciones) y usa reglas logicas para inferir respuestas. Se esta implementando el backtracking ya que si una combinación cuenta con varias coincidencias el programa encuentra la primera y regresa para intentar encontrar una solución diferente, esto continua hasta que ya no encuentre coincidencias. Finalmente se esta implementando también backtracking debido a que este lenguaje no usa while o for. 
-
-Prolog es popular en la inteligencia articfial, algunas de las ventajas de implementar prolog y el paradigma logico es facil de construir una base de datos, la combinación de patrones es facil, basa sus busquedas en recursion y tiene manejo de listas incorporado. Las desventajas incluyen que la entrada y salida de datos no es sencilla y existe el lenguaje LISP [2] que maneja de mejor manera lo anterior. 
+Implementare un chatbot que brinde al usuario sugerencias sobre musica en base a sus gustos y prefencias. Implementare esta solución usando el paradigma de programación logico y prolog.  Mi solución pertenece al paradigma logico debido a que se basa en hechos, reglas y consultas, declara un conocimiento (los datos de las canciones) y usa reglas logicas para inferir respuestas. Se esta implementando también backtracking debido a que este lenguaje lo usa internamente al no usar while o for.  Finalmente se esta implementando la recursion ya que si una combinación cuenta con varias coincidencias el programa es capaz de imprimir como resultado todas las sugerencias.
 
 ## Modelo
 <img src="/modelo.png" alt="Paradigma de programación" width="400" height="500">  
 
-Esta imagen muestra un diagrama de flujo que muestra el funcionamiento de mi programa en el lenguaje prolog. Mi solución implementa el paradigma de programación logico debido a que: 
+Esta imagen muestra un diagrama de flujo que muestra el funcionamiento de mi programa en el lenguaje prolog. Mi solución implementa el paradigma de programación logico debido a que:
 
--Utiliza la unificación: solo existe una declaración de relaciones y en base a eso y usando la funcion trata de unificar recomendar con cancion. 
+-Incluye una base de conocimiento (reglas): cancion(Titulo, Genero, EstadoDeAnimo, Idioma, Decada, Autor).
+
+-Utiliza la unificación: solo existe una declaración de relaciones y en base a eso, trata de unificar recomendar con cancion. 
 
 -Valido que entradas si son logicas: member valida que la entrada si sea valida. 
+
+- Prolog es un lenguaje naturalmente logico
 
 
 ## Implementacion 
@@ -39,7 +43,7 @@ Esta imagen muestra un diagrama de flujo que muestra el funcionamiento de mi pro
   cancion(Cancion, GustoGenero, GustoEstado, GustoIdioma, GustoDecada, Autor).
    ````
 
-- Se veridica que el dato ingresado para cada una de las categorias sea valido
+- Se verifica que el dato ingresado para cada una de las categorias sea valido
   ```
   generoValido(G) :-
   member(G, [rock, pop, romantica, clasica, reggaeton]).
@@ -117,3 +121,4 @@ Si quisiera incluir una base de datos mas grande (mas canciones) implementar el 
 ## Referencias 
 - GeeksforGeeks. (2018, October 12). Introduction of Programming Paradigms. GeeksforGeeks. https://www-geeksforgeeks-org.translate.goog/introduction-of-programming-paradigms/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc
 - [2] GeeksforGeeks. (2018a, May 26). Prolog | An Introduction - GeeksforGeeks. GeeksforGeeks. https://www.geeksforgeeks.org/prolog-an-introduction/
+- Staff, C. (2024). Logic Programming: What It Is and How to Use It. Coursera. https://www.coursera.org/articles/logic-programming-language
