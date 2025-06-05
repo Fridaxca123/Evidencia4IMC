@@ -17,6 +17,11 @@ Implementare un chatbot que brinde al usuario sugerencias sobre musica en base a
 Prolog es popular en la inteligencia articfial, algunas de las ventajas de implementar prolog y el paradigma logico es facil de construir una base de datos, la combinación de patrones es facil, basa sus busquedas en recursion y tiene manejo de listas incorporado. Las desventajas incluyen que la entrada y salida de datos no es sencilla y existe el lenguaje LISP [2] que maneja de mejor manera lo anterior. 
 
 ## Modelo
+[modelo]: modelo.png 
+
+Esta imagen muestra un diagrama de flujo que muestra el funcionamiento de mi programa en el lenguaje prolog. Mi solución implementa el paradigma de programación logico debido a que: 
+
+-Utiliza la unificación 
 
 ## Implementacion 
 
@@ -96,7 +101,7 @@ Para probar mi programa abre el descarga el documento swish.pl, escribir en la c
 
 **Complejidad**
 
-La complejidad de tiempo para mi programa es de O(N) ya que se itera sobre todas las opciones (los datos de canciones disponibles) para encontrar coincidencias, esto significa que en el peor de los casos se deben recorer todas las opciones disponibles por lo que que la complejidad seria O(N) (N siendo el numero de canciones existentes). Como actualmente cuento con pocas canciones etso no representa un problema, pero si quisiera escalarlo a mayor cantidad esta complejidad seria una limitante, ya que con un mayor numero de datos la complejidad aumentaria haciendo el programa ineficiente. Por otro lado la complejidad de espacio seria O(M) (M es las canciones que tubieron coincidencia), el espacio consumido es principalmente[almente de la lista que guarda los resultados. 
+La complejidad de tiempo para mi programa es de O(N) ya que se itera sobre todas las opciones (los datos de canciones disponibles) para encontrar coincidencias, esto significa que en el peor de los casos se deben recorer todas las opciones disponibles por lo que que la complejidad seria O(N) (N siendo el numero de canciones existentes). Como actualmente cuento con pocas canciones etso no representa un problema, pero si quisiera escalarlo a mayor cantidad esta complejidad seria una limitante, ya que con un mayor numero de datos la complejidad aumentaria haciendo el programa ineficiente. Por otro lado la complejidad de espacio seria O(M) (M es las canciones que tubieron coincidencia), el espacio consumido es principalmente de la lista que guarda los resultados. 
 
 **Limitantes**
 
