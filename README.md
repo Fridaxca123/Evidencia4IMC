@@ -122,7 +122,7 @@ Considero que el multithreading podría ser una solución adecuada en caso de qu
 
 Como todos los hilos acceden a la misma base de datos, sería necesario implementar mecanismos de sincronización como mutex (exclusión mutua) para garantizar la consistencia de los datos. De esta manera, solo un hilo podría modificar o leer ciertas secciones críticas de la memoria en un momento dado, previniendo conflictos. (Aunque no estoy tan segura si es necesario el mutex ya que no se supone los threads modifiquen ningun dato solo los leen)
 
-<img src="/modelo2 .png" alt="Paradigma de programación" width="400" height="500"> 
+<img src="/modelo2 .png" alt="Paradigma de programación" width="600" height="500"> 
 
 ## Referencias 
 - GeeksforGeeks. (2018, October 12). Introduction of Programming Paradigms. GeeksforGeeks. https://www-geeksforgeeks-org.translate.goog/introduction-of-programming-paradigms/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc
