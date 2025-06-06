@@ -21,11 +21,11 @@ Implementare un chatbot que brinde al usuario sugerencias sobre musica en base a
 
 Esta imagen muestra un diagrama de flujo que muestra el funcionamiento de mi programa en el lenguaje prolog. Mi solución implementa el paradigma de programación logico debido a que:
 
--Incluye una base de conocimiento (reglas): cancion(Titulo, Genero, EstadoDeAnimo, Idioma, Decada, Autor).
+- Incluye una base de conocimiento (reglas): cancion(Titulo, Genero, EstadoDeAnimo, Idioma, Decada, Autor).
 
--Utiliza la unificación: solo existe una declaración de relaciones y en base a eso, trata de unificar recomendar con cancion. 
+- Utiliza la unificación: solo existe una declaración de relaciones y en base a eso, trata de unificar recomendar con cancion. 
 
--Valido que entradas si son logicas: member valida que la entrada si sea valida. 
+- Valido que entradas si son logicas: member valida que la entrada si sea valida. 
 
 - Prolog es un lenguaje naturalmente logico
 
@@ -116,9 +116,17 @@ La principal limitante que encuentro actualmenet a mi programa es que no cuento 
 
 **Soluciones con otros paradigmas**
 
-Si quisiera incluir una base de datos mas grande (mas canciones) implementar el paradigma de programación concurrente ya que permitiria dividir la carga de trabajo en múltiples hilos o procesos que buscan en paralelo, reduciendo el tiempo de respuesta.  Además, en un sistema con múltiples usuarios solicitando recomendaciones al mismo tiempo, la concurrencia maneja estas peticiones en paralelo permitiendo acceso a todos los usuarios.
+Si quisiera incluir una base de datos mas grande (millones de canciones) implementar los paradigmas de programación concurrente seria una buena opcion ya que permitiria dividir la carga de trabajo en múltiples hilos, reduciendo el tiempo de respuesta.  El paradigam de programación concurrente es una forma de programación que utiliza múltiples hilos o procesos para realizar diferentes tareas al mismo tiempo. 
+
+Considero que el multithreading podría ser una solución adecuada en caso de querer implementar el programa a mayor escala (base de datos más grande), ya que este permite que varios subprocesos coexistan y compartan elementos como memoria y contexto. Aunque técnicamente no se ejecutan todos los procesos simultáneamente (en un sistema single-core), el sistema operativo alterna entre ellos tan rápidamente que da la ilusión de paralelismo.
+
+Como todos los hilos acceden a la misma base de datos, sería necesario implementar mecanismos de sincronización como mutex (exclusión mutua) para garantizar la consistencia de los datos. De esta manera, solo un hilo podría modificar o leer ciertas secciones críticas de la memoria en un momento dado, previniendo conflictos. (Aunque no estoy tan segura si es necesario el mutex ya que no se supone los threads modifiquen ningun dato solo los leen)
+
+<img src="/modelo2.png" alt="Paradigma de programación" width="400" height="500"> 
 
 ## Referencias 
 - GeeksforGeeks. (2018, October 12). Introduction of Programming Paradigms. GeeksforGeeks. https://www-geeksforgeeks-org.translate.goog/introduction-of-programming-paradigms/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc
 - [2] GeeksforGeeks. (2018a, May 26). Prolog | An Introduction - GeeksforGeeks. GeeksforGeeks. https://www.geeksforgeeks.org/prolog-an-introduction/
 - Staff, C. (2024). Logic Programming: What It Is and How to Use It. Coursera. https://www.coursera.org/articles/logic-programming-language
+- Goel, A. (2024, December 28). Multithreading in Operating System. GeeksforGeeks. https://www.geeksforgeeks.org/multithreading-in-operating-system/
+- Sheldon, R. (2023, May). What is mutex (mutual exclusion object)? - Definition from WhatIs.com. SearchNetworking. https://www.techtarget.com/searchnetworking/definition/mutex
